@@ -33,12 +33,12 @@
     <Authors>Swiss Life authors and contributors</Authors>
     <Company>Swiss Life</Company>
     <Copyright>Copyright © $(Company) $([System.DateTime]::Now.Year)</Copyright>
-    <PackageLicenseUrl>https://github.com/SwissLife-OSS/Snapshooter/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/SwissLife-OSS/Snapshooter</PackageProjectUrl>
     <PackageReleaseNotes>Release notes: https://github.com/SwissLife-OSS/Snapshooter/releases/$(Version)</PackageReleaseNotes>
     <PackageTags>XUnit SwissLife Snapshot UnitTest Test IntegrationTest SystemTest DatabaseTest .Net</PackageTags>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageIconUrl>https://github.com/SwissLife-OSS/snapshooter/raw/master/logo.png</PackageIconUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>GIT</RepositoryType>
   </PropertyGroup>
 
@@ -53,7 +53,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.102" PrivateAssets="All" />
+    <None Include="$(MSBuildThisFileDirectory)logo.png"
+          Pack="true"
+          PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)README.md"
+          Pack="true"
+          PackagePath="\" />
   </ItemGroup>
 
 </Project>
